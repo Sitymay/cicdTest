@@ -16,7 +16,9 @@ jobs:
     - uses: actions/setup-go@v4
 
     - name: Build
-      run: go build -v ./...
+      run: | 
+          cd ${GITHUB_WORKSPACE} 
+          go build -v ./...
 
   tests:
     # Задание "tests" зависит от задания "build" и будет выполнено после него
